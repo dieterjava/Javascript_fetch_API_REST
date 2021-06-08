@@ -1,8 +1,12 @@
 // console.log('hello');
 let postsList = document.querySelector(".posts-list");
-//let postsList = document.getElementsByName('posts-list');
 
-const url = "http://localhost:3000/users";
+let addPostForm = document.querySelector(".add-post-form");
+//let postsList = document.getElementsByName('posts-list');
+const titleValue = document.getElementById('title-value');
+const bodyValue = document.getElementById('body-value');
+
+let url = "http://localhost:3000/users";
 
 let output = "";
 
@@ -40,5 +44,28 @@ fetch(url)
     console.log(postsList);
   }
 
-  
-  
+
+
+  addPostForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('Form submitted!');
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: titleValue.value,
+        username: bodyValue.value
+      })
+
+    })
+      .then(response => response.json())
+      .then(data =>{
+        const dataArray = [];
+        dataArray.push(data);
+        renderPosts(dataArray);
+      }) 
+})
+

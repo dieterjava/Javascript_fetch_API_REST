@@ -7,6 +7,7 @@ const titleValue = document.getElementById('title-value');
 const bodyValue = document.getElementById('body-value');
 
 let url = "http://localhost:3000/users";
+//let url = "http://127.0.0.1:8080/users";
 
 let output = "";
 
@@ -30,12 +31,12 @@ fetch(url)
     posts.forEach((user) => {
       output += `
         <div class="card mt-4 col-md-6 bg-light">
-        <div class="card-body">
+        <div class="card-body" data-id=${user.id}>
           <h5 class="card-title">${user.name}</h5>
           <h6 class="card-subtitle mb-2 text-muted"></h6>
           <p class="card-text">${user.username}</p>
-          <a href="${url}/${user.id}" class="card-link">Edit</a>
-          <a href="${url}/${user.id}" class="card-link">Delete</a>
+          <a href="#" class="card-link" id="id_edit">Edit</a>
+          <a href="#" class="card-link" id="id_delete">Delete</a>
         </div>
       </div> `;
       console.log(user.name);
@@ -43,8 +44,6 @@ fetch(url)
     postsList.innerHTML = output;
     console.log(postsList);
   }
-
-
 
   addPostForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -67,5 +66,28 @@ fetch(url)
         dataArray.push(data);
         renderPosts(dataArray);
       }) 
+})
+
+postsList.addEventListener('click', (e) =>{
+ // console.log(e.target.id);
+ e.preventDefault();
+ let editButtonIsPressed = e.target.id == "id_edit";
+ let deleteButtonIsPressed = e.target.id == "id_delete";
+ 
+console.log(e.target.parentElement.dataset.id);
+
+let id = e.target.parentElement.dataset.id;
+
+if (deleteButtonIsPressed){
+  fetch( `${url}/${id}`, 
+  {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'}
+    })
+      .then(result => result.json())
+      .then(() => location.reload());
+  }
+
 })
 

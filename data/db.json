@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Robert",
-      "username": "Schwartz",
-      "phone": "12345"
-    },
-    {
       "id": 2,
       "name": "Lucy",
       "username": "Ballmer",
@@ -25,22 +19,14 @@
       "phone": "444444"
     },
     {
-      "id": 5,
-      "name": "Lucy5",
-      "username": "Ballmer5",
-      "phone": "55555"
+      "name": "aaaaaaaaaa",
+      "username": "aaaaaaaaaaaa",
+      "id": 5
     },
     {
-      "id": 6,
-      "name": "Robert",
-      "username": "Schwartz",
-      "phone": "6666666"
-    },
-    {
-      "id": 7,
-      "name": "Robert",
-      "username": "Schwartz",
-      "phone": "7777777"
+      "name": "bbbbbbbb",
+      "username": "bbbbbbbbbb",
+      "id": 6
     }
   ],
   "employees": [

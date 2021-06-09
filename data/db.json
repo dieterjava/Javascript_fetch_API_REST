@@ -2,31 +2,20 @@
   "users": [
     {
       "id": 2,
-      "name": "Lucy",
-      "username": "Ballmer",
+      "name": "Lucy 11",
+      "username": "Ballmer11",
       "phone": "98876"
     },
     {
       "id": 3,
-      "name": "Lucy3",
-      "username": "Ballmer3",
+      "name": "Lucy2",
+      "username": "Ballmer2",
       "phone": "988763"
     },
     {
-      "id": 4,
-      "name": "Lucy4",
-      "username": "Ballmer4",
-      "phone": "444444"
-    },
-    {
-      "name": "aaaaaaaaaa",
-      "username": "aaaaaaaaaaaa",
+      "name": "Lucy3",
+      "username": "Ballmer3",
       "id": 5
-    },
-    {
-      "name": "bbbbbbbb",
-      "username": "bbbbbbbbbb",
-      "id": 6
     }
   ],
   "employees": [

@@ -5,6 +5,7 @@ let addPostForm = document.querySelector(".add-post-form");
 //let postsList = document.getElementsByName('posts-list');
 const titleValue = document.getElementById('title-value');
 const bodyValue = document.getElementById('body-value');
+const btnSubmit = document.querySelector('.btn');
 
 let url = "http://localhost:3000/users";
 //let url = "http://127.0.0.1:8080/users";
@@ -89,5 +90,32 @@ if (deleteButtonIsPressed){
       .then(() => location.reload());
   }
 
+
+  if (editButtonIsPressed){
+    const parent = e.target.parentElement;
+    let titleContent = parent.querySelector('.card-title').textContent;
+    let bodyContent =  parent.querySelector('.card-text').textContent;
+
+    titleValue.value = titleContent;
+    bodyValue.value = bodyContent;
+
+    btnSubmit.addEventListener('click', (event) => {
+      event.preventDefault();
+      console.log('post updated');
+
+      fetch( `${url}/${id}`, 
+      {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            name: titleValue.value,
+            username: bodyValue.value
+        })
+        })
+          .then(result => result.json())
+          .then(() => location.reload());
+
+    })
+  }
 })
 

@@ -34,3 +34,13 @@ e.g. bootstrap, be aware of the version incompatibilities, 3...., 4..., 5....
 2. class in html and css ist just a string
   e.g. <div class="col-md-6">
 
+3. Debug in Chrome in order to figure out errors.
+
+To Dos:
+
+0. Good: only one javascript file.
+1. use posts , not user and posts
+2. use Promise = fetch ..., easier for debugging.
+3. No extra libraries, remove bootstrap
+4. Add new field
+4. Minimize fields occurences, for generic javascript generation.

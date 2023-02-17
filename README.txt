@@ -15,7 +15,6 @@ npm install bootstrap
 Use bootstrap card component 
 https://getbootstrap.com/docs/4.0/components/card/
 
-
 Use json-server with:
 cd data
 json-server --watch db.json
@@ -37,7 +36,6 @@ e.g. bootstrap, be aware of the version incompatibilities, 3...., 4..., 5....
 3. Debug in Chrome in order to figure out errors.
 
 To Dos:
-
 0. Good: only one javascript file.
 3. No extra libraries, remove bootstrap
 4. Add new field

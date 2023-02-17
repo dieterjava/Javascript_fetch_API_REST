@@ -1,5 +1,18 @@
+CRUD example with web-components and json.server
+
 see video at  https://www.youtube.com/watch?v=ccX3ApO4qz8
 
+Install Live Server and json-server.
+npm install -g json-server
+Install Live Server from VS Code plugins. Restart VS Code afterwards.
+#########################
+Start json-server with:
+cd data
+json-server --watch db.json
+Click Go Live in VS Code , bottom line.
+Go to http://127.0.0.1:5500/  
+
+#########################
 Using Live Server. Click Go Live in VS Code , bottom line.
 
 Use emmet abbreviations, like .title or .class 
